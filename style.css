@@ -64,8 +64,11 @@
   .section {
     padding: 50px;
     text-align: center;
-    max-width: 1200px;
     margin: auto;
+  }
+
+  .section__container {
+    max-width: 1200px;
   }
 
   /*글자*/
@@ -260,4 +263,74 @@
 
 .major__description {
   font-size: var(--font-small);
+}
+
+/* Skills */
+#skills {
+  background-color: var(--color-yellow);
+}
+
+.skillset {
+  color: var(--color-light-white);
+  display: flex;
+  margin-top: 2rem;
+  background-color: var(--color-light-grey);
+}
+
+.skillset__title {
+  color: var(--color-white);
+  margin: 1rem 0;
+  font-size: var(--font-medium);
+  font-weight: var(--weight-semi-bold);
+}
+
+.skillset__left {
+  padding: 1rem 2.5rem;
+  flex-basis: 60%;
+  background-color: var(--color-dark-grey);
+}
+
+.skill {
+  margin: 1rem 0;
+}
+
+.skill__description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill__bar {
+  width: 100%;
+  height: 3px;
+  border-radius: var(--size-border-radius);
+  background-color: var(--color-light-grey);
+}
+
+.skill__value {
+  width: 90%;
+  height: 3px;
+  border-radius: var(--size-border-radius);
+  background-color: var(--color-orange);
+}
+
+.skillset__right {
+  flex-basis: 40%;
+}
+
+.tools {
+  background-color: var(--color-grey);
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.tools__list {
+  padding: 0;
+}
+
+.etc {
+  padding: 1rem 0;
+}
+
+.etc__list {
+  padding: 0;
 }
