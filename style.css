@@ -334,3 +334,107 @@
 .etc__list {
   padding: 0;
 }
+
+/* Work */
+
+.work__categories {
+  margin: 1rem 0 2.5rem 0;
+}
+
+.category__btn {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-semi-bold);
+  padding: 1rem 2.5rem;
+  border-radius: var(--size-border-radius);
+  border: 1px solid var(--color-light-grey);
+}
+
+.category__btn.active,
+.category__btn:hover {
+  background-color: var(--color-pink);
+  color: var(--color-white);
+}
+
+.category__btn.active .category__count,
+.category__btn:hover .category__count {
+  opacity: 1;
+  top: 0;
+}
+
+.category__count {
+  display: inline-block;
+  margin-left: 5px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 50%;
+  color: var(--color-white);
+  background-color: var(--color-orange);
+  font-weight: var(--weight-regular);
+  position: relative;
+  top: -20px;
+  left: 4px;
+  opacity: 0;
+  transition: all var(--animation-duration) ease;
+}
+
+.work__projects {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+
+.project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 250px;
+  margin: 0.3rem;
+  padding: 1rem;
+  background-color: var(--color-light-white);
+  position: relative;
+}
+
+.project__img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.project__description {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  background-color: var(--color-black);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all var(--animation-duration) ease;
+}
+
+.project__description:hover {
+  transform: translateY(0);
+  opacity: 0.7;
+}
+
+.project__description h3,
+.project__description span {
+  color: var(--color-white);
+}
+
+.project__description h3:after {
+  content: '';
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  position: relative;
+  left: 50%;
+  margin-left: -12px;
+  margin-top: 8px;;
+}
