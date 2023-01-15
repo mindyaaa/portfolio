@@ -5,6 +5,7 @@
 const navbar = document.querySelector('#navbar');
 const navHeight = navbar.getBoundingClientRect().height;
 
+
 function scrollHandler () {
     const currentHeight = window.scrollY;
     // console.log('currentHeight', currentHeight);
@@ -51,5 +52,21 @@ contactMe.addEventListener('click', contactMeHandler);
 // 해당 메뉴 이동 공통 함수로 빼기
 function scrollIntoView(selector) {
     const scrollTo = document.querySelector(selector)
-    scrollTo.scrollIntoView({behavior:"smooth", block:'nearest'});
+    scrollTo.scrollIntoView({behavior:'smooth', block:'nearest'});
 }
+
+// 스크롤 내릴 때 Home화면 투명하게 만들어주기
+const home = document.querySelector('.home__container');
+const homeHeight = home.getBoundingClientRect().height;
+
+function homeScrollHandler() {
+    const currentHeight = window.scrollY;
+    
+    if(currentHeight > navHeight) {
+        home.style.opacity = (1 - currentHeight/homeHeight);
+    } else {
+        home.style.opacity = 1;
+    }
+}
+
+document.addEventListener('scroll', homeScrollHandler)

@@ -173,9 +173,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center; */
-    padding: 6rem 0;
+    padding: 5rem 0;
     text-align: center;
     background: center/cover no-repeat url('./img/backGround.png');
+    transition: all var(--animation-duration) ease-in-out;
 }
 
 .home__avatar {
