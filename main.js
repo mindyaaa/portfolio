@@ -33,9 +33,7 @@ function clickHandler (event) {
         return;
     }
 
-    const scrollTo = document.querySelector(link);
-    scrollTo.scrollIntoView({behavior: "smooth", block: "nearest"});
-    
+    scrollIntoView(link);
 
 }
 
@@ -45,8 +43,13 @@ navbarMenu.addEventListener('click', clickHandler);
 const contactMe = document.querySelector('.home__contact');
 
 function contactMeHandler () {
-    const scrollToContact = document.querySelector("#contact")
-    scrollToContact.scrollIntoView({behavior:"smooth"});
+    scrollIntoView('#contact');
 }
 
 contactMe.addEventListener('click', contactMeHandler);
+
+// 해당 메뉴 이동 공통 함수로 빼기
+function scrollIntoView(selector) {
+    const scrollTo = document.querySelector(selector)
+    scrollTo.scrollIntoView({behavior:"smooth", block:'nearest'});
+}
