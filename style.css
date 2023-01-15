@@ -105,13 +105,19 @@
 /**Navbar*/
 
 #navbar {
+    position: fixed;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    background-color: var(--color-pink);
+    background-color: transparent;
     padding: 1rem 2rem;
     color: var(--color-white);
     font-size: var(--font-regular);
     font-weight: var(--weight-semi-bold);
+}
+
+#navbar.navbar-dark {
+  background-color: var(--color-pink);
 }
 
 .navbar__logo {
@@ -132,7 +138,7 @@
 .navbar__menu {
     display: flex;
     padding: 0;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .navbar__menu__item{
@@ -167,7 +173,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center; */
-    padding: 40px;
+    padding: 5rem 0;
     text-align: center;
     background: center/cover no-repeat url('./img/backGround.png');
 }
