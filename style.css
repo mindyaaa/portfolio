@@ -47,6 +47,7 @@
   /*태그 공통*/
   a {
     text-decoration: none;
+    all: unset;
   }
 
   li {
@@ -69,6 +70,7 @@
 
   .section__container {
     max-width: 1200px;
+    margin: auto;
   }
 
   /*글자*/
@@ -437,4 +439,67 @@
   left: 50%;
   margin-left: -12px;
   margin-top: 8px;;
+}
+
+/* Testimonials */
+#testimonials {
+  background-color: var(--color-light-white);
+}
+
+.testimonials {
+  margin: 2rem auto;
+  display: flex;
+}
+
+.testimonial__avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+
+.testimonial__speech-bubble {
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonial__speech-bubble p {
+  color: var(--color-light-grey);
+  font-size: var(--font-regular);
+  font-weight: var(--weight-semi-bold);
+}
+
+.name a {
+  color: var(--color-pink)
+}
+
+
+/* Contact */
+#contact {
+  background-color: var(--color-pink);
+  margin-bottom: 1rem;
+}
+
+.contact__title,
+.contact__email,
+.contact__links,
+.contact__rights {
+  color: var(--color-white);
+  margin: 1rem 0;
+}
+
+.contact__links {
+  font-size: var(--font-large)
+}
+
+.contact__links i {
+  transition: all var(--animation-duration ease);
+}
+
+.contact__links i:hover {
+  transform: scale(1.1);
+  color: var(--color-yellow);
 }
