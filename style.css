@@ -522,6 +522,30 @@
   color: var(--color-yellow);
 }
 
+/* Arrow */
+#arrowUp {
+  position: fixed;
+  z-index: 2;
+  right: 10px;
+  bottom: 20px;
+  background-color: var(--color-dark-pink);
+  color: var(--color-white);
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--animation-duration) ease-in;
+}
+
+#arrowUp.visible {
+  opacity: 1;
+  pointer-events: visible;
+}
+
 /* Media Query */
 @media screen and (max-width:760px) {
   .navbar__toggle-btn {

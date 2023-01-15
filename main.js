@@ -70,3 +70,24 @@ function homeScrollHandler() {
 }
 
 document.addEventListener('scroll', homeScrollHandler)
+
+
+// arrowUp
+const arrowUp = document.querySelector('#arrowUp');
+
+function arrowClickHandler() {
+    scrollIntoView('#home');
+}
+
+arrowUp.addEventListener('click', arrowClickHandler);
+
+
+function arrowUpscrollHandler () {
+    if (window.scrollY > homeHeight/2) {
+        arrowUp.classList.add('visible');
+    } else {
+        arrowUp.classList.remove('visible');
+    }
+}
+
+document.addEventListener('scroll', arrowUpscrollHandler)
