@@ -22,10 +22,18 @@ document.addEventListener('scroll', scrollHandler);
 
 // navbar 메뉴 클릭시 해당 메뉴로 이동
 const navbarMenu = document.querySelector('.navbar__menu');
+let currentMenu ;
 
 function clickHandler (event) {
     const target = event.target;
-    target.classList.toggle('active');
+
+    // console.log(currentMenu);
+    if(currentMenu) {
+        currentMenu.classList.remove('active');
+    }
+    target.classList.add('active');
+    currentMenu = target;
+
 
     const link = target.dataset.link;
     // console.log(link);
@@ -33,7 +41,6 @@ function clickHandler (event) {
     if (link == null) {
         return;
     }
-
     scrollIntoView(link);
 
 }
@@ -90,4 +97,45 @@ function arrowUpscrollHandler () {
     }
 }
 
-document.addEventListener('scroll', arrowUpscrollHandler)
+document.addEventListener('scroll', arrowUpscrollHandler);
+
+
+// My Work filtering
+const workBtnContainer = document.querySelector('.work__categories');
+const projectContainer = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');
+const allFilter = document.querySelector('.category__btn')
+
+let currentFilter ;
+
+function workBtnClickHandler (e) {
+    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+    // console.log(filter);
+
+    if (currentFilter) {
+        currentFilter.classList.remove('active')
+    }
+
+    allFilter.classList.remove('active')
+    e.target.classList.add('active');
+    currentFilter = e.target;
+
+    if (filter === null) {
+        return;
+    }
+
+    projectContainer.classList.add('anim-out');
+
+    setTimeout(() => {
+        projects.forEach((i) => {
+            // console.log(i.dataset.type);
+            if (filter === '*' || filter === i.dataset.type) {
+                i.classList.remove('invisible');
+            } else i.classList.add('invisible');
+        });
+        projectContainer.classList.remove('anim-out');
+    }, 300)
+
+}
+
+workBtnContainer.addEventListener('click', workBtnClickHandler)

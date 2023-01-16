@@ -403,6 +403,12 @@
   justify-content: center;
   flex-wrap: wrap;
   padding: 1rem 0;
+  transition: all var(--animation-duration) ease-out;
+}
+
+.work__projects.anim-out {
+  opacity: 0;
+  transform: scale(0.96) translateY(40px);
 }
 
 .project {
@@ -415,6 +421,11 @@
   padding: 1rem;
   background-color: var(--color-light-white);
   position: relative;
+  transition: all var(--animation-duration) ease-in-out;
+}
+
+.project.invisible {
+  display: none;
 }
 
 .project__img {
