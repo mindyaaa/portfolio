@@ -106,18 +106,20 @@
     z-index: 1;
     position: fixed;
     width: 100%;
+    /* height: 3rem;
+    line-height: 3rem; */
     display: flex;
     justify-content: space-between;
     background-color: transparent;
     /* padding: 1rem 2rem; */
     color: var(--color-white);
     font-size: var(--font-regular);
-    font-weight: var(--weight-semi-bold);
+    font-weight: var(--weight-semi-bold); 
 }
 
 #navbar.navbar-dark {
   background-color: var(--color-pink);
-  padding: 1rem 0;
+  padding: 10px 0;
 }
 
 .navbar__logo {
@@ -150,7 +152,6 @@
 
 .navbar__menu__item:hover {
     background-color: var(--color-dark-pink);
-
 }
 
 .navbar__menu__item.active {
@@ -160,8 +161,8 @@
 
 .navbar__toggle-btn {
   position: absolute;
-  top: 18px;
-  right: 32px;
+  top: 12px;
+  right: 15px;
   font-size: 24px;
   color: var(--color-white);
   display: none;
@@ -453,7 +454,10 @@
   opacity: 0.7;
 }
 
-.project__description h3,
+.project__description h3 {
+  color: var(--color-orange);
+}
+
 .project__description span {
   color: var(--color-white);
 }
@@ -461,12 +465,13 @@
 .project__description h3:after {
   content: '';
   display: block;
-  width: 25px;
+  width: 50px;
   height: 2px;
   background-color: white;
   position: relative;
   left: 50%;
-  margin-left: -12px;
+  transform: translateX(-50%);
+  /* margin-left: -12px; */
   margin-top: 8px;;
 }
 
@@ -573,6 +578,13 @@
     flex-direction: column;
     text-align: center;
     display: none;
+    transition: all var(--animation-duration) ease-out;
+  }
+
+  .navbar__menu.visible {
+    display: flex;
+    width: 100%;
+    background-color: var(--color-pink);
   }
 
   .about__majors {

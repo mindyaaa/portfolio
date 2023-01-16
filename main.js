@@ -92,6 +92,7 @@ arrowUp.addEventListener('click', arrowClickHandler);
 function arrowUpscrollHandler () {
     if (window.scrollY > homeHeight/2) {
         arrowUp.classList.add('visible');
+        navbarMenu.classList.remove('visible');
     } else {
         arrowUp.classList.remove('visible');
     }
@@ -138,4 +139,13 @@ function workBtnClickHandler (e) {
 
 }
 
-workBtnContainer.addEventListener('click', workBtnClickHandler)
+workBtnContainer.addEventListener('click', workBtnClickHandler);
+
+// 햄버거 메뉴 버튼 클릭
+const hamburgerMenu = document.querySelector('.navbar__toggle-btn');
+
+function hamburgerClickHandler () {
+    navbarMenu.classList.toggle('visible');
+}
+
+hamburgerMenu.addEventListener('click', hamburgerClickHandler);
