@@ -149,3 +149,43 @@ function hamburgerClickHandler () {
 }
 
 hamburgerMenu.addEventListener('click', hamburgerClickHandler);
+
+// 1. 모든 섹션 요소들과 메뉴 아이템들을 가지고 오기
+// 2. IntersectionObserver를 이용해서 모든 섹션들을 관찰한다
+// 3. 보여지는 섹션에 해당하는 메뉴 아이템을 활성화 시킨다
+
+const sectionIds = [
+    '#home', 
+    '#about', 
+    '#skills', 
+    '#work',
+    '#testimonials',
+    '#contact',
+];
+
+const sections = sectionIds.map((id) => 
+    document.querySelector(id));
+// console.log(sections);
+
+const navItems = sectionIds.map((id) => 
+    document.querySelector(`[data-link="${id}"]`));
+// console.log(navItems);
+
+const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.3,
+}
+
+const callback = (entries, observer) => {
+    entries.forEach((entry) => {
+        if(entry.isIntersecting) {
+            // console.log(entry.target);
+        } else {
+            // console.log('out');
+        }
+        })
+}
+
+const observer = new IntersectionObserver(callback, options);
+sections.forEach((section) => observer.observe(section))
